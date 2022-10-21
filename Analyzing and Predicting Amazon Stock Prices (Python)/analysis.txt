@@ -1,0 +1,14 @@
+Dataset Range: 03/01/2019 - 03/01/2021
+Total Days Reported: 504
+Overall Average Price: 2360.6
+First Half Average Price: 1842.7
+Second Half Average Price: 2878.5
+Less than or equal to 1% change in price: 396 days
+Greater than 1% change in price: 108 days
+Maximum Price: 3531.45 on 09/02/2020
+Minimum Price: 1620.8 on 03/08/2019
+Greatest Positive Change in Price: 196.6 on 07/20/2020 by 6.55 %
+Greatest Negative Change in Price: -147.1 on 07/13/2020 by -4.52 %
+Overall Change in Price Since First Date: 1474.4
+Coefficient of Determination (SMA10): 0.9858371894397706
+Coefficient of Determination (SMA50): 0.9131291114069102
