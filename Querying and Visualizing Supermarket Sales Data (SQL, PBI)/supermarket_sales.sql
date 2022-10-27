@@ -23,47 +23,47 @@ SELECT *
 FROM portfolioproject.supermarket_sales;
 
 # Totals
-SELECT SUM(Quantity) AS TotalQuantity, SUM(Revenue) AS TotalRevenue, SUM(Profit) AS TotalProfit, Round(SUM(Revenue)/SUM(Quantity), 2) AS OverallAvgPrice, ROUND(AVG(Rating), 1) AS OverallAvgRating
+SELECT SUM(Quantity) AS TotalQuantity, SUM(Revenue) AS TotalRevenue, SUM(Profit) AS TotalProfit, ROUND(SUM(Revenue)/SUM(Quantity), 2) AS OverallAvgPrice, ROUND(AVG(Rating), 1) AS OverallAvgRating
 FROM portfolioproject.supermarket_sales
 WHERE Profit IS NOT NULL;
 
 # Daily totals for each branch
-SELECT Date, Branch, City, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, Round(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice, ROUND(AVG(Rating), 1) AS AvgRating
+SELECT Date, Branch, City, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, ROUND(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice, ROUND(AVG(Rating), 1) AS AvgRating
 FROM portfolioproject.supermarket_sales
 WHERE Profit IS NOT NULL
 GROUP BY Date, Branch
 ORDER BY Date, Branch;
 
 # Monthly totals for each branch
-SELECT MONTHNAME(Date) AS Month, Branch, City, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, Round(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice, ROUND(AVG(Rating), 1) AS AvgRating
+SELECT MONTHNAME(Date) AS Month, Branch, City, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, ROUND(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice, ROUND(AVG(Rating), 1) AS AvgRating
 FROM portfolioproject.supermarket_sales
 WHERE Profit IS NOT NULL
 GROUP BY MONTHNAME(Date), Branch
 ORDER BY MONTH(Date), Branch;
 
 # Overall totals for each branch
-SELECT Branch, City, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, Round(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice, ROUND(AVG(Rating), 1) AS AvgRating
+SELECT Branch, City, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, ROUND(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice, ROUND(AVG(Rating), 1) AS AvgRating
 FROM portfolioproject.supermarket_sales
 WHERE Profit IS NOT NULL
 GROUP BY Branch
 ORDER BY Branch;
 
 # Daily totals for each product line
-SELECT Date, ProductLine, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, Round(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice
+SELECT Date, ProductLine, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, ROUND(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice
 FROM portfolioproject.supermarket_sales
 WHERE Profit IS NOT NULL
 GROUP BY Date, ProductLine
 ORDER BY Date, ProductLine;
 
 # Monthly totals for each product line
-SELECT MONTHNAME(Date) AS Month, ProductLine, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, Round(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice
+SELECT MONTHNAME(Date) AS Month, ProductLine, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, ROUND(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice
 FROM portfolioproject.supermarket_sales
 WHERE Profit IS NOT NULL
 GROUP BY MONTHNAME(Date), ProductLine
 ORDER BY MONTH(Date), ProductLine;
 
 # Overall totals for each product line
-SELECT ProductLine, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, Round(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice
+SELECT ProductLine, SUM(Quantity) AS Quantity, SUM(Revenue) AS Revenue, SUM(Profit) AS Profit, ROUND(SUM(Revenue)/SUM(Quantity), 2) AS AvgPrice
 FROM portfolioproject.supermarket_sales
 WHERE Profit IS NOT NULL
 GROUP BY ProductLine
